@@ -7,4 +7,4 @@ start frontend:<br>
 
 start backend:<br>
 >cd backend<br>
->node server.js or npm run dev
+>npm run serve or npm run dev
