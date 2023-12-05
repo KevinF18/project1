@@ -1,5 +1,5 @@
 # project1
-to start the project
+to run the project
 
 start frontend:<br>
 >cd frontend<br>
