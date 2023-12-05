@@ -34,6 +34,7 @@ const configureRoutes = (io) => {
   router.get("/tasks", (req, res) => {
     try {
       const tasks = readTasksFromFile();
+      io.emit("tasks", tasks);
       res.status(200).json(tasks);
     } catch (error) {
       res.status(500).json({ message: error.message });

@@ -28,6 +28,17 @@ export const TaskList = () => {
   const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await Axios.get("http://localhost:3001/api/tasks");
+        setTasks(response.data);
+      } catch (error) {
+        console.error("Error fetching initial data:", error.message);
+      }
+    };
+
+    fetchData();
+
     socket.on("tasks", (updatedTasks) => {
       setTasks(updatedTasks);
     });
